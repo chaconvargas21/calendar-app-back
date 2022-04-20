@@ -5,7 +5,7 @@ const getEventos = async (req, res = response) => {
 
   return res.json({
     ok: true,
-    msg: eventos,
+    eventos: eventos,
   });
 };
 const crearEvento = async (req, res = response) => {
