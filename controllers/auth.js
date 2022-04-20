@@ -81,18 +81,18 @@ const loginUser = async (req, res = response) => {
   }
 };
 
-const revalidateToken = async(req, res = response) => {
-  const {uid, name} = req;
+const revalidateToken = async (req, res = response ) => {
 
-  const token =  await generarJWT(uid, name);
+  const { uid, name } = req;
+
+  // Generar JWT
+  const token = await generarJWT( uid, name );
 
   res.json({
-    ok: true,
-    uid,
-    name,
-    token
-  });
-};
+      ok: true,
+      token
+  })
+}
 
 module.exports = {
   createUser,
