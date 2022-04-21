@@ -75,7 +75,7 @@ const eliminarEvento = async (req, res = response) => {
   try {
     const evento = await Event.findById(eventId);
 
-    if (!evento.user) {
+    if (!evento) {
       return res.status(404).json({
         ok: false,
         msg: "No se encontro evento con ese id",
